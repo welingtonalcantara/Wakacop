@@ -1,4 +1,4 @@
-package paulta.domain;
+package academy.wakanda.wakacop.pauta.domain;
 
 import lombok.Getter;
 import lombok.ToString;
