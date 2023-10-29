@@ -9,7 +9,6 @@ import java.util.UUID;
 @ToString
 public class PautaCadastradaResponse {
     private UUID id;
-
     public PautaCadastradaResponse(Pauta pauta) {
         this.id = pauta.getId();
     }
