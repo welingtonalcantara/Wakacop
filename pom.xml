@@ -15,7 +15,10 @@
 	<description>Sistema de Cooperativa do Wakanda</description>
 	<properties>
 		<java.version>11</java.version>
+		<!-- SPRING CLOUD -->
+		<spring-cloud.version>2021.0.3</spring-cloud.version>
 	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -34,8 +37,18 @@
 			<artifactId>h2</artifactId>
 			<scope>runtime</scope>
 		</dependency>
+		<!-- FEIGN -->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-openfeign</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>4.5.13</version>
+		</dependency>
 
-<!--		<dependency>-->
+		<!--		<dependency>-->
 <!--			<groupId>org.postgresql</groupId>-->
 <!--			<artifactId>postgresql</artifactId>-->
 <!--			<scope>runtime</scope>-->
@@ -51,6 +64,18 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring-cloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 
 	<build>
 		<plugins>
