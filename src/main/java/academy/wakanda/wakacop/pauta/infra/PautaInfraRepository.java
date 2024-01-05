@@ -26,7 +26,7 @@ public class PautaInfraRepository implements PautaRepository {
     public Pauta buscaPautaPorId(UUID idPauta) {
         log.info("[start] PautaInfraRepository - buscaPautaPorId");
         Pauta pautaPorId = pautaSpringDataJPARepository.findById(idPauta)
-                        .orElseThrow(() -> new RuntimeException("Pauta não encontrada!"));
+                        .orElseThrow(() -> new RuntimeException("Pauta Não encontrada"));
         log.info("[finish] PautaInfraRepository - buscaPautaPorId");
         return pautaPorId;
     }

@@ -14,9 +14,7 @@ import org.hibernate.annotations.LazyCollectionOption;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.UUID;
+import java.util.*;
 
 @Getter
 @ToString
@@ -53,7 +51,7 @@ public class SessaoVotacao {
 
     public VotoPauta recebeVoto(VotoRequest votoRequest, AssociadoService associadoService, PublicadorResultadoSessao publicadorResultadoSessao) {
         validaSessaoAberta(publicadorResultadoSessao);
-        validaAssociado(votoRequest.getCpfAssociado(), associadoService);
+        validaAssociado(votoRequest.getCpfAssociado(),associadoService);
         VotoPauta voto = new VotoPauta(this, votoRequest);
         votos.put(votoRequest.getCpfAssociado(),voto);
         return voto;
@@ -80,7 +78,7 @@ public class SessaoVotacao {
     }
 
     private void validaAssociado(String cpfAssociado, AssociadoService associadoService) {
-        associadoService.validaAssociadoAptovoto(cpfAssociado);
+        associadoService.validaAssociadoAptoVoto(cpfAssociado);
         validaVotoDuplicado(cpfAssociado);
     }
 

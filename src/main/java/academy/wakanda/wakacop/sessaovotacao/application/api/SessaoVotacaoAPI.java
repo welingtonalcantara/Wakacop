@@ -8,15 +8,15 @@ import java.util.UUID;
 @RestController
 @RequestMapping("/sessao")
 public interface SessaoVotacaoAPI {
+    @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/abertura")
-    @ResponseStatus(code = HttpStatus.CREATED)
     SessaoAberturaResponse abreSessao(@RequestBody SessaoAberturaRequest sessaoAberturaRequest);
 
+    @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/{idSessao}/voto")
-    @ResponseStatus(code = HttpStatus.CREATED)
     VotoResponse recebeVoto(@PathVariable UUID idSessao, @RequestBody VotoRequest novoVoto);
 
+    @ResponseStatus(HttpStatus.OK)
     @GetMapping("/{idSessao}/resultado")
-    @ResponseStatus(code = HttpStatus.OK)
     ResultadoSessaoResponse obtemResultado(@PathVariable UUID idSessao);
 }

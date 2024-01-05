@@ -30,5 +30,4 @@ public class Pauta {
         this.idAssociadoAutor = novaPauta.getIdAssociadoAutor();
         this.dataCriacao = LocalDateTime.now();
     }
-
 }

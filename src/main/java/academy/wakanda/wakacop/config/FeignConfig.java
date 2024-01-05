@@ -1,5 +1,6 @@
 package academy.wakanda.wakacop.config;
 
+
 import feign.Client;
 import feign.Logger;
 import feign.Request;

@@ -35,8 +35,7 @@ public class SessaoVotacaoApplicationService implements SessaoVotacaoService {
     public VotoResponse recebeVoto(UUID idSessao, VotoRequest novoVoto) {
         log.debug("[start] SessaoVotacaoApplicationService - recebeVoto");
         SessaoVotacao sessao = sessaoVotacaoRepository.buscaPorId(idSessao);
-        //associadoService.validaAssociadoAptovoto(novoVoto.getCpfAssociado());
-        VotoPauta voto = sessao.recebeVoto(novoVoto, associadoService, publicadorResultadoSessao);
+        VotoPauta voto = sessao.recebeVoto(novoVoto,associadoService, publicadorResultadoSessao);
         sessaoVotacaoRepository.salva(sessao);
         log.debug("[finish] SessaoVotacaoApplicationService - recebeVoto");
         return new VotoResponse(voto);

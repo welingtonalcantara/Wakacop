@@ -1,4 +1,4 @@
-package academy.wakanda.wakacop.associado.infra.cliente;
+package academy.wakanda.wakacop.associado.infra.client;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Getter;
@@ -6,7 +6,7 @@ import lombok.ToString;
 
 @Getter
 @ToString
-public class ConsultaCPFResponse {
+public class ConsultaCpfResponse {
     @JsonProperty("ni")
     private String ni;
     @JsonProperty("nome")
@@ -19,9 +19,11 @@ public class ConsultaCPFResponse {
     public boolean isInvalid() {
         return ! isValid();
     }
-    private boolean isValid() {
+
+    public boolean isValid() {
         return this.situacao.getCodigo().equals("0");
     }
+
     @Getter
     @ToString
     public static class Situacao {

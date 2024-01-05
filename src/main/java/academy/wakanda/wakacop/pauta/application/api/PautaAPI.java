@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/pauta")
 public interface PautaAPI {
+    @ResponseStatus(HttpStatus.CREATED)
     @PostMapping
-    @ResponseStatus(code = HttpStatus.CREATED)
     PautaCadastradaResponse cadastraPauta(@RequestBody NovaPautaRequest novaPauta);
 }
